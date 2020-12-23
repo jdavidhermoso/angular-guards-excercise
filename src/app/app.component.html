@@ -25,7 +25,8 @@
       other user task not finished.
     </li>
     <li>
-      Resolve: To wait for data prior to render a component. This way, component when component is rendered, data will already be in place.
+      Resolve: To wait for data prior to render a component. This way, component when component is rendered, data will
+      already be in place.
     </li>
     <li>
       CanLoad: To avoid the user browser lazy loading the modules the user should not be able to see.
@@ -35,7 +36,12 @@
   <ul>
     <li>
       <a [routerLink]="'/canactivate'">
-        Route protected with canActivate guard
+        Route protected with canActivate guard (Click on it and look at the network tab in the DevTools)
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/canload'">
+        Route protected with canLoad guard (Click on it and look at the network tab in the DevTools)
       </a>
     </li>
     <li>
