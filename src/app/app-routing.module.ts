@@ -7,6 +7,7 @@ import {Component4Component} from './components/component4/component4.component'
 import {Component5Component} from './components/component5/component5.component';
 import {Component6Component} from './components/component6/component6.component';
 import {DeactivateGuard} from './guards/deactivate.guard';
+import {CanActivateChildGuard} from './guards/can-activate-child.guard';
 
 const routes: Routes = [
   {
@@ -21,10 +22,11 @@ const routes: Routes = [
   {
     path: 'canactivatechild',
     component: Component2Component,
+    canActivateChild: [CanActivateChildGuard],
     children: [
       {
         path: 'child1',
-        component: Component3Component
+        component: Component3Component,
       },
       {
         path: 'child2',
