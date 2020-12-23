@@ -8,6 +8,9 @@ import {Component5Component} from './components/component5/component5.component'
 import {Component6Component} from './components/component6/component6.component';
 import {DeactivateGuard} from './guards/deactivate.guard';
 import {CanActivateChildGuard} from './guards/can-activate-child.guard';
+import {DataService} from './services/data.service';
+import {ResolveGuardService} from './guards/resolve-guard.service';
+import {Component7Component} from './components/component7/component7.component';
 
 const routes: Routes = [
   {
@@ -36,11 +39,12 @@ const routes: Routes = [
   },
   {
     path: 'resolve',
-    component: Component6Component
+    component: Component6Component,
+    resolve: {data: ResolveGuardService}
   },
   {
     path: 'notresolve',
-    component: Component6Component
+    component: Component7Component
   },
   {
     path: '',
@@ -50,6 +54,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  providers: [DataService, ResolveGuardService],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
