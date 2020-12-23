@@ -11,7 +11,6 @@ export class CanActivateChildGuard implements CanActivateChild {
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('ff');
     if (!allowUserActivateChild) {
       alert('You are not allowed to view the child pages');
       return false;

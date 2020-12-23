@@ -11,11 +11,13 @@ import {CanActivateChildGuard} from './guards/can-activate-child.guard';
 import {DataService} from './services/data.service';
 import {ResolveGuardService} from './guards/resolve-guard.service';
 import {Component7Component} from './components/component7/component7.component';
+import {CanActivateGuard} from './guards/can-activate.guard';
 
 const routes: Routes = [
   {
     path: 'canactivate',
-    loadChildren: () => import('./modules/module1/module1.module').then((m) => m.Module1Module)
+    loadChildren: () => import('./modules/module1/module1.module').then((m) => m.Module1Module),
+    canActivate: [CanActivateGuard]
   },
   {
     path: 'candeactivate',
